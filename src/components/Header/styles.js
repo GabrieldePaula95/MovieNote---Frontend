@@ -7,6 +7,7 @@ export const Container = styled.header`
 
     height: 105px;
     width: 100%;
+    
 
     border-bottom-width: 1px;
     border-bottom-style: solid;
@@ -15,11 +16,25 @@ export const Container = styled.header`
     display: flex;
     justify-content: space-between;
 
-    padding: 0 80px;
+    padding: 0 123px;
+
+    > div {
+        display: flex;
+
+        button {
+            position: relative;
+            right: 99px;
+            top: 10px;
+            font-size: 14px;
+            color: ${({ theme }) => theme.COLORS.GRAY_100};
+            background: none;
+            border: none;  
+            color: none;
+        } 
+    }
 `;
 
 export const Profile = styled(Link)`
-
     display: flex;
     align-items: center;
     
@@ -34,18 +49,12 @@ export const Profile = styled(Link)`
         flex-direction: column;
         margin-right: 16px;
         line-height: 24px;
-        align-items: end;
-
-        button {
-            font-size: 14px;
-            color: ${({ theme }) => theme.COLORS.GRAY_100};
-            background: none;
-            border: none;  
-            color: none;
-        }
+        align-items: end;         
+        
         strong {
             font-size: 18px;
             color: ${({ theme }) => theme.COLORS.WHITE};
+            margin-bottom: 15px;
         }
     }
 `;
@@ -72,7 +81,7 @@ export const Search = styled.input`
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
     align-items: flex-start;
 
-    color: ${({ theme }) => theme.COLORS.GRAY_100};
+    color: ${({ theme }) => theme.COLORS.WHITE};
     font-size: 14px;
     font-weight: 400;
 `;

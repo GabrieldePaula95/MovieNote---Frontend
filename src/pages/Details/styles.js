@@ -32,19 +32,13 @@ export const Name = styled.div`
         line-height: normal;        
         height: 40px;
     }
-`;
-export const Rating = styled.button`
-    display: flex;
 
-    background: none;
-    height: 40px;
-    border: none;    
-    size: 20px;
-
-    > svg {
-        color: ${({ theme }) => theme.COLORS.PINK};
-        font-size: 25px;
-        margin-right: 10px;
+    > span {
+        > svg {
+    color: ${({ theme }) => theme.COLORS.PINK};
+    font-size: 16px;
+    margin-left: 8px;
+    }
     }
 `;
 
@@ -78,4 +72,5 @@ export const Section = styled.div`
 export const Description = styled.p`
     color: ${({ theme }) => theme.COLORS.WHITE};
     text-align: justify;
+    margin-bottom: 40px;
 `;

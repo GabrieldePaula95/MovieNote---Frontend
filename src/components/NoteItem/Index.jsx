@@ -7,7 +7,7 @@ export function NoteItem({ $isNew, value, onClick, ...rest }){
         <Container $isNew={$isNew}>
             <input
                 type="text"
-                defaultValue={value}
+                value={value}
                 readOnly={!$isNew}
                 {...rest}
             />

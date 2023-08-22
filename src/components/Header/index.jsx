@@ -1,7 +1,15 @@
+import { api } from "../../services/api";
+import { useState, useEffect } from "react";
+import { useAuth } from "../../hooks/auth";
 import { Container, Profile, Search, Logo } from "./styles";
-import { Input } from "../Input";
 
-export function Header(){
+import avatarPlaceholder from "../../assets/avatar_placeholder.svg"
+
+export function Header({ onChange }){
+    const { signOut, user } = useAuth();
+
+    const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
+
     return(
         <Container>
 
@@ -9,18 +17,23 @@ export function Header(){
                 <strong>MoviesNotes</strong>
             </Logo>
 
-            <Search placeholder="Pesquisar pelo título" />  
+            <Search 
+                placeholder="Pesquisar pelo título" 
+                onChange={onChange}
+            />  
+            <div>
+                <Profile to="/profile">                
+                    <div>
+                        <strong >{user.name}</strong>
 
-            <Profile to="/profile">
-                <div>
-                    <strong>Gabriel de Paula</strong>
-                    <button>Sair</button>
-                </div>
-
-                <img 
-                src="https://github.com/gabrieldepaula95.png"
-                alt="Foto do usuário" />                
-            </Profile>
+                    </div>
+                    <img 
+                        src={avatarUrl}
+                        alt={`Foto do ${user.name}`}
+                    />               
+                </Profile>
+                <button onClick={signOut} >Sair</button>
+            </div>
         </Container>
     );
 }
