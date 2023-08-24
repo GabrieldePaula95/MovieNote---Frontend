@@ -1,5 +1,5 @@
 import { Container } from "./styles";
-import { RiStarLine, RiStarSFill } from 'react-icons/ri'
+import { RiStarLine, RiStarSFill } from 'react-icons/ri';
 
 
 export function Rating({ rating }) {
