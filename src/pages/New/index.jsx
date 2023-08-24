@@ -88,7 +88,7 @@ export function New(){
 
                     <Textarea
                         placeholder="Observações" 
-                        onChange={e => setDescription(e.target.value)}
+                        onChange={(e) => setDescription(e.target.value)}
                     />
 
                     <h2>Marcadores</h2>
