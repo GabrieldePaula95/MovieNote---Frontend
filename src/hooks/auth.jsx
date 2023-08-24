@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { createContext, useContext, useEffect, useState } from 'react'
 
 import { api } from '../services/api'
