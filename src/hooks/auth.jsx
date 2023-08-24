@@ -92,4 +92,4 @@ function useAuth() {
 }
 
 export { AuthProvider, useAuth }
-
+// eslint-disable-next-line prettier/prettier
