@@ -9,7 +9,7 @@ import { Header } from "../../components/Header";
 import { Container, Form, Section } from "./styles";
 import { Textarea } from "../../components/Textarea";
 import { NoteItem } from "../../components/NoteItem";
-import { ButtonText } from "../../components/ButtonText";
+
 
 export function New(){
     const [title, setTitle] = useState("");
@@ -88,7 +88,7 @@ export function New(){
 
                     <Textarea
                         placeholder="Observações" 
-                        onChange={(e) => setDescription(e.target.value)}
+                        onChange={e => setDescription(e.target.value)}
                     />
 
                     <h2>Marcadores</h2>
