@@ -4,7 +4,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import { Button } from '../../components/Button'
 import { Header } from '../../components/Header'
 import { Input } from '../../components/Input'
-import { NoteItem } from '../../components/NoteItem'
 import { Textarea } from '../../components/Textarea'
 import { api } from '../../services/api'
 import { Container, Form, Section } from './styles'
@@ -93,21 +92,21 @@ export function New() {
           <h2>Marcadores</h2>
 
           <Section>
-            {tags.map((tag, index) => (
+            {/* {tags.map((tag, index) => (
               <NoteItem
                 key={String(index)}
                 value={tag}
                 onClick={() => handleRemoveTag(tag)}
               />
-            ))}
+            ))} */}
 
-            <NoteItem
+            {/* <NoteItem
               $isNew
               placeholder="Novo Marcador"
               value={newTag}
               onChange={(e) => setNewTag(e.target.value)}
               onClick={handleAddTags}
-            />
+            /> */}
           </Section>
 
           <div>
