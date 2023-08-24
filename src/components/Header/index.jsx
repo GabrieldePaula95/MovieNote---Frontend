@@ -1,12 +1,18 @@
 import { api } from "../../services/api";
-import { useState, useEffect } from "react";
 import { useAuth } from "../../hooks/auth";
+import { useNavigate } from "react-router-dom";
 import { Container, Profile, Search, Logo } from "./styles";
 
 import avatarPlaceholder from "../../assets/avatar_placeholder.svg"
 
 export function Header({ onChange }){
     const { signOut, user } = useAuth();
+    const navigate = useNavigate();
+
+    function handleSignOut(){
+        navigate("/");
+        signOut();
+    }
 
     const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
 
@@ -32,7 +38,7 @@ export function Header({ onChange }){
                         alt={`Foto do ${user.name}`}
                     />               
                 </Profile>
-                <button onClick={signOut} >Sair</button>
+                <button onClick={handleSignOut} >Sair</button>
             </div>
         </Container>
     );
