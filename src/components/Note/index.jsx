@@ -1,22 +1,21 @@
-import { Container } from "./styles";
-import { Tags } from "../Tags"
-import { Rating } from "../Rating";
+import { Rating } from '../Rating'
+import { Tags } from '../Tags'
+import { Container } from './styles'
 
-export function Note({ data, ...rest }){    
-    return(
-        <Container {...rest}>
-            <h1>{data.title}</h1>
-            <Rating rating={data.rating}/>
-            <p>{data.description}</p>
+export function Note({ data, ...rest }) {
+  return (
+    <Container {...rest}>
+      <h1>{data.title}</h1>
+      <Rating rating={data.rating} />
+      <p>{data.description}</p>
 
-            {
-                data.tags &&
-                <footer>
-                    {
-                        data.tags.map(tag => <Tags key={tag.id} title={tag.name} />)
-                    }
-                </footer>
-            }
-        </Container>
-    );
+      {data.tags && (
+        <footer>
+          {data.tags.map((tag) => (
+            <Tags key={tag.id} title={tag.name} />
+          ))}
+        </footer>
+      )}
+    </Container>
+  )
 }

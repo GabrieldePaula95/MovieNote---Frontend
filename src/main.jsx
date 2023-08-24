@@ -1,13 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import GlobalStyle from './styles/global';
-import { ThemeProvider } from 'styled-components';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { ThemeProvider } from 'styled-components'
+import GlobalStyle from './styles/global'
 
-import { AuthProvider } from './hooks/auth';
+import { AuthProvider } from './hooks/auth'
 
-import theme from './styles/theme';
+import theme from './styles/theme'
 
-import { Routes } from './routes';
+import { Routes } from './routes'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
