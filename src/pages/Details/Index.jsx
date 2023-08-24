@@ -44,7 +44,7 @@ export function Details() {
       setData(response.data)
     }
     fetchNote()
-  }, [])
+  }, [params.id])
 
   return (
     <Container>
