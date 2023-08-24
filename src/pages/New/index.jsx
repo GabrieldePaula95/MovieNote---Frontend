@@ -1,12 +1,13 @@
 import { useState } from 'react'
-import { RiArrowLeftLine } from 'react-icons/ri'
 import { Link, useNavigate } from 'react-router-dom'
+import { api } from '../../services/api'
+
+import { RiArrowLeftLine } from 'react-icons/ri'
 import { Button } from '../../components/Button'
 import { Header } from '../../components/Header'
 import { Input } from '../../components/Input'
 import { NoteItem } from '../../components/NoteItem'
 import { Textarea } from '../../components/Textarea'
-import { api } from '../../services/api'
 import { Container, Form, Section } from './styles'
 
 export function New() {
