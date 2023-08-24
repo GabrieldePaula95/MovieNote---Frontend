@@ -1,15 +1,13 @@
-import { api } from '../../services/api';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import { Input } from "../../components/Input";
 import { RiArrowLeftLine } from 'react-icons/ri';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
-import { Container, Form, Section } from "./styles";
-import { Textarea } from "../../components/Textarea";
+import { Input } from "../../components/Input";
 import { NoteItem } from "../../components/NoteItem";
-import { ButtonText } from "../../components/ButtonText";
+import { Textarea } from "../../components/Textarea";
+import { api } from '../../services/api';
+import { Container, Form, Section } from "./styles";
 
 export function New(){
     const [title, setTitle] = useState("");
