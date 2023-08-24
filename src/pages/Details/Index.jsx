@@ -3,6 +3,8 @@ import { RiArrowLeftLine } from 'react-icons/ri'
 import { useEffect, useState } from 'react';
 import { LuClock3 } from 'react-icons/lu';
 import { useAuth } from '../../hooks/auth';
+import { format, subHours } from 'date-fns';
+import { utcToZonedTime } from 'date-fns-tz';
 
 import { api } from '../../services/api';
 
@@ -18,14 +20,14 @@ export function Details(){
   const [data, setData] = useState(null);
 
   const { user } = useAuth();
-
-  const avatar = `${api.defaults.baseURL}/files/${user.avatar}`
-
+  
   const params = useParams();
   const navigate = useNavigate();
 
+  const avatar = `${api.defaults.baseURL}/files/${user.avatar}`
+ 
   function handleReturn(){
-      navigate("/")
+      navigate(-1)
   }
 
   async function handleRemove(){
@@ -40,10 +42,11 @@ export function Details(){
   useEffect(() => {
     async function fetchNote(){
       const response = await api.get(`/notes/${params.id}`);
-      setData(response.data)
+      setData(response.data) 
+         
     }
+    fetchNote(); 
 
-    fetchNote();
   }, []);
 
   return(
@@ -74,7 +77,7 @@ export function Details(){
             />
             <p>{`Por ${user.name}`}</p>
             <LuClock3 />
-            <p>{(data.created_at)}</p>
+            <p>{format(subHours(utcToZonedTime(new Date(data.created_at), 'Etc/UTC'), 6), `dd/MM/yy 'às' HH:mm`)}</p> 
           </Section>
           {
             data.tags &&

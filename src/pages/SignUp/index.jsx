@@ -67,7 +67,7 @@ export function SignUp(){
                     title="Cadastrar" 
                 />
 
-                <Link to="/">
+                <Link to={-1}>
                     <RiArrowLeftLine />
                     Voltar para login
                 </Link>
