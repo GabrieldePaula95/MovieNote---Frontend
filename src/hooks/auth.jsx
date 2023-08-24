@@ -1,4 +1,3 @@
-/* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useEffect, useState } from 'react'
 
 import { api } from '../services/api'
@@ -93,3 +92,4 @@ function useAuth() {
 }
 
 export { AuthProvider, useAuth }
+// eslint-disable-next-line prettier/prettier
