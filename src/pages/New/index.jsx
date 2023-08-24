@@ -4,7 +4,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import { Button } from '../../components/Button'
 import { Header } from '../../components/Header'
 import { Input } from '../../components/Input'
-import { Textarea } from '../../components/Textarea'
 import { api } from '../../services/api'
 import { Container, Form, Section } from './styles'
 
@@ -84,10 +83,10 @@ export function New() {
             />
           </div>
 
-          <Textarea
+          {/* <Textarea
             placeholder="Observações"
             onChange={(e) => setDescription(e.target.value)}
-          />
+          /> */}
 
           <h2>Marcadores</h2>
 
